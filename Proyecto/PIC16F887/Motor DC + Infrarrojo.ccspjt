@@ -1,0 +1,23 @@
+[PROJECT]
+Target=Motor DC + Infrarrojo.hex
+Processor_Text=PIC16F887
+CCSVersion=5.076
+Compiler=PCM
+[Target Data]
+FileList=Motor DC + Infrarrojo.c
+[Motor DC + Infrarrojo.c]
+Type=4
+[mru-list]
+1=Motor DC + Infrarrojo.c
+[Units]
+Count=1
+1=Motor DC + Infrarrojo (main)
+
+[defines]
+buildcount=1
+
+[ProjectLog]
+Days=1
+D1=24-02-2022
+D1_L=1
+D1_L1=[54176]Project Closed.

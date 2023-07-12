@@ -1,0 +1,75 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+008     PSP_DATA
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020     VALOR_ADC
+021     @TRIS_C
+022-025 @SFTOI.P1
+022     MAIN.@SCRATCH1
+023-026 @MULFF.P1
+023-024 @ITOF.P2
+027-02A @MULFF.P1
+02B     @MULFF.@SCRATCH1
+02C     @MULFF.@SCRATCH2
+02D     @MULFF.@SCRATCH3
+02E     @MULFF.@SCRATCH4
+02F     @MULFF.@SCRATCH5
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  SisInit
+000024  @ITOF
+000043  @MULFF
+0000BA  @SFTOI
+0000DB  MAIN
+0000DB  @cinit1
+0000E7  @cinit2
+
+Project Directory:
+    E:\Martin Hdez\Desktop\CCS 16F\877A\Práctica 12\
+
+Project Files:
+    Motor DC + Infrarrojo.c                                 [24-feb.-22 15:02  CRC=6D61E944]
+    ..\..\..\..\..\Program Files\PICC\Devices\16F877A.h     [15-ene.-18 15:53  CRC=63418C39]
+
+Source signature=33E501B6
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=4EA6
+
+Units:
+    Motor DC + Infrarrojo (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   Motor DC + Infrarrojo.xsym
+    Errors:      Motor DC + Infrarrojo.err
+    Ext Symbols: Motor DC + Infrarrojo.esym
+    INHX8:       Motor DC + Infrarrojo.hex
+    Symbols:     Motor DC + Infrarrojo.sym
+    List:        Motor DC + Infrarrojo.lst
+    Debug/COFF:  Motor DC + Infrarrojo.cof
+    Project:     Motor DC + Infrarrojo.ccspjt
+    Call Tree:   Motor DC + Infrarrojo.tre
+    Statistics:  Motor DC + Infrarrojo.STA

@@ -1,0 +1,5 @@
+Compiling E:\Martin Hdez\Desktop\CCS 16F\877A\Práctica 12\Motor DC + Infrarrojo on 24-feb.-22 at 15:02
+>>> Warning 203 "Motor DC + Infrarrojo.c" Line 39(1,1): Condition always TRUE
+      Memory usage:   ROM=3%      RAM=2% - 6%
+      0 Errors,  1 Warnings.
+Build Successful.

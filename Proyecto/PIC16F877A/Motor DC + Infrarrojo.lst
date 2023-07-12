@@ -1,0 +1,362 @@
+CCS PCM C Compiler, Version 5.076, 56587               24-feb.-22 15:02
+
+               Filename:   E:\Martin Hdez\Desktop\CCS 16F\877A\Práctica 12\Motor DC + Infrarrojo.lst
+
+               ROM used:   279 words (3%)
+                           Largest free fragment is 2048
+               RAM used:   8 (2%) at main() level
+                           21 (6%) worst case
+               Stack used: 0 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   0DB
+0003:  NOP
+.................... /* 
+.................... AUTOR: MICROSIDE TECHNOLOGY S.A. DE C.V. 
+.................... FECHA: JUNIO 2019 
+.................... */ 
+....................  
+.................... /* 
+.................... --------------------------------------------------------------------------- 
+.................... Esta práctica consiste en variar la velocidad de un motor por medio de un sensor 
+.................... SHARP usando los módulos PWM y ADC. 
+.................... --------------------------------------------------------------------------- 
+.................... */ 
+....................  
+....................  
+.................... #include <16F877A.h>                            //Incluye el microcontrolador con el que se va a trabajar  
+.................... //////////// Standard Header file for the PIC16F877A device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F877A 
+*
+0024:  MOVLW  8E
+0025:  MOVWF  77
+0026:  MOVF   24,W
+0027:  MOVWF  78
+0028:  MOVF   23,W
+0029:  MOVWF  79
+002A:  CLRF   7A
+002B:  MOVF   78,F
+002C:  BTFSS  03.2
+002D:  GOTO   038
+002E:  MOVF   79,W
+002F:  MOVWF  78
+0030:  CLRF   79
+0031:  MOVLW  08
+0032:  SUBWF  77,F
+0033:  MOVF   78,F
+0034:  BTFSS  03.2
+0035:  GOTO   038
+0036:  CLRF   77
+0037:  GOTO   040
+0038:  BCF    03.0
+0039:  BTFSC  78.7
+003A:  GOTO   03F
+003B:  RLF    79,F
+003C:  RLF    78,F
+003D:  DECF   77,F
+003E:  GOTO   038
+003F:  BCF    78.7
+0040:  BCF    0A.3
+0041:  BCF    0A.4
+0042:  GOTO   0F7 (RETURN)
+0043:  MOVF   23,W
+0044:  BTFSC  03.2
+0045:  GOTO   0B3
+0046:  MOVWF  2B
+0047:  MOVF   27,W
+0048:  BTFSC  03.2
+0049:  GOTO   0B3
+004A:  ADDWF  2B,F
+004B:  BTFSC  03.0
+004C:  GOTO   054
+004D:  MOVLW  7F
+004E:  SUBWF  2B,F
+004F:  BTFSS  03.0
+0050:  GOTO   0B3
+0051:  BTFSC  03.2
+0052:  GOTO   0B3
+0053:  GOTO   058
+0054:  MOVLW  81
+0055:  ADDWF  2B,F
+0056:  BTFSC  03.0
+0057:  GOTO   0B3
+0058:  MOVF   2B,W
+0059:  MOVWF  77
+005A:  CLRF   78
+005B:  CLRF   79
+005C:  CLRF   7A
+005D:  MOVF   24,W
+005E:  MOVWF  2F
+005F:  BSF    2F.7
+0060:  MOVF   25,W
+0061:  MOVWF  2E
+0062:  MOVF   26,W
+0063:  MOVWF  2D
+0064:  MOVLW  18
+0065:  MOVWF  2B
+0066:  CLRF   2C
+0067:  BTFSS  2D.0
+0068:  GOTO   081
+0069:  MOVF   2A,W
+006A:  ADDWF  7A,F
+006B:  BTFSS  03.0
+006C:  GOTO   073
+006D:  INCF   79,F
+006E:  BTFSS  03.2
+006F:  GOTO   073
+0070:  INCF   78,F
+0071:  BTFSC  03.2
+0072:  BSF    2C.7
+0073:  MOVF   29,W
+0074:  ADDWF  79,F
+0075:  BTFSS  03.0
+0076:  GOTO   07A
+0077:  INCF   78,F
+0078:  BTFSC  03.2
+0079:  BSF    2C.7
+007A:  MOVF   28,W
+007B:  MOVWF  25
+007C:  BSF    25.7
+007D:  MOVF   25,W
+007E:  ADDWF  78,F
+007F:  BTFSC  03.0
+0080:  BSF    2C.7
+0081:  RLF    2C,F
+0082:  RRF    78,F
+0083:  RRF    79,F
+0084:  RRF    7A,F
+0085:  RRF    2F,F
+0086:  RRF    2E,F
+0087:  RRF    2D,F
+0088:  BCF    03.0
+0089:  DECFSZ 2B,F
+008A:  GOTO   066
+008B:  MOVLW  01
+008C:  ADDWF  77,F
+008D:  BTFSC  03.0
+008E:  GOTO   0B3
+008F:  BTFSC  78.7
+0090:  GOTO   098
+0091:  RLF    2F,F
+0092:  RLF    7A,F
+0093:  RLF    79,F
+0094:  RLF    78,F
+0095:  DECF   77,F
+0096:  BTFSC  03.2
+0097:  GOTO   0B3
+0098:  BTFSS  2F.7
+0099:  GOTO   0A9
+009A:  INCF   7A,F
+009B:  BTFSS  03.2
+009C:  GOTO   0A9
+009D:  INCF   79,F
+009E:  BTFSS  03.2
+009F:  GOTO   0A9
+00A0:  INCF   78,F
+00A1:  BTFSS  03.2
+00A2:  GOTO   0A9
+00A3:  RRF    78,F
+00A4:  RRF    79,F
+00A5:  RRF    7A,F
+00A6:  INCF   77,F
+00A7:  BTFSC  03.2
+00A8:  GOTO   0B3
+00A9:  MOVF   24,W
+00AA:  MOVWF  2C
+00AB:  MOVF   28,W
+00AC:  XORWF  2C,F
+00AD:  BTFSS  2C.7
+00AE:  GOTO   0B1
+00AF:  BSF    78.7
+00B0:  GOTO   0B7
+00B1:  BCF    78.7
+00B2:  GOTO   0B7
+00B3:  CLRF   77
+00B4:  CLRF   78
+00B5:  CLRF   79
+00B6:  CLRF   7A
+00B7:  BCF    0A.3
+00B8:  BCF    0A.4
+00B9:  GOTO   108 (RETURN)
+00BA:  MOVLW  8E
+00BB:  MOVWF  77
+00BC:  MOVF   22,W
+00BD:  SUBWF  77,F
+00BE:  MOVF   23,W
+00BF:  MOVWF  79
+00C0:  MOVF   24,W
+00C1:  MOVWF  78
+00C2:  BSF    79.7
+00C3:  MOVF   77,F
+00C4:  BTFSC  03.2
+00C5:  GOTO   0D1
+00C6:  BCF    03.0
+00C7:  MOVF   79,F
+00C8:  BTFSS  03.2
+00C9:  GOTO   0CD
+00CA:  MOVF   78,F
+00CB:  BTFSC  03.2
+00CC:  GOTO   0D1
+00CD:  RRF    79,F
+00CE:  RRF    78,F
+00CF:  DECFSZ 77,F
+00D0:  GOTO   0C6
+00D1:  BTFSS  23.7
+00D2:  GOTO   0D8
+00D3:  COMF   78,F
+00D4:  COMF   79,F
+00D5:  INCF   78,F
+00D6:  BTFSC  03.2
+00D7:  INCF   79,F
+00D8:  BCF    0A.3
+00D9:  BCF    0A.4
+00DA:  GOTO   111 (RETURN)
+....................  
+.................... #list 
+....................  
+.................... #device ADC=8                                   // Configura el ADC a 8 bits 
+.................... #use delay(clock=20Mhz, crystal)                //Tipo de oscilador y frecuencia dependiendo del microcontrolador  
+....................  
+.................... int VALOR_ADC;                                  //Variable para almacenar el valor leído del ADC 
+....................  
+.................... void SisInit() 
+....................  
+.................... { 
+....................      
+....................     setup_timer_2 (T2_DIV_BY_16, 254, 16);          //Configura Timer2 
+*
+0004:  MOVLW  78
+0005:  MOVWF  78
+0006:  IORLW  06
+0007:  MOVWF  12
+0008:  MOVLW  FE
+0009:  BSF    03.5
+000A:  MOVWF  12
+....................  
+....................     setup_ccp1 (CCP_PWM);    //Configura el módulo CCP para uso del PWM 
+000B:  BCF    03.5
+000C:  BCF    21.2
+000D:  MOVF   21,W
+000E:  BSF    03.5
+000F:  MOVWF  07
+0010:  BCF    03.5
+0011:  BCF    07.2
+0012:  MOVLW  0C
+0013:  MOVWF  17
+....................  
+....................     setup_adc_ports (AN0);                                      //Configura solo el puerto A0 como entrada analógica 
+0014:  BSF    03.5
+0015:  BCF    1F.0
+0016:  BSF    1F.1
+0017:  BSF    1F.2
+0018:  BSF    1F.3
+....................  
+....................     setup_adc (ADC_CLOCK_DIV_8);                                //Configura oscilador para la conversión 
+0019:  BCF    1F.6
+001A:  BCF    03.5
+001B:  BSF    1F.6
+001C:  BCF    1F.7
+001D:  BSF    03.5
+001E:  BCF    1F.7
+001F:  BCF    03.5
+0020:  BSF    1F.0
+0021:  BCF    0A.3
+0022:  BCF    0A.4
+0023:  GOTO   0EA (RETURN)
+....................  
+.................... } 
+....................  
+.................... void main(void) 
+*
+00DB:  MOVF   03,W
+00DC:  ANDLW  1F
+00DD:  MOVWF  03
+00DE:  MOVLW  FF
+00DF:  MOVWF  21
+00E0:  BSF    03.5
+00E1:  BSF    1F.0
+00E2:  BSF    1F.1
+00E3:  BSF    1F.2
+00E4:  BCF    1F.3
+00E5:  MOVLW  07
+00E6:  MOVWF  1C
+00E7:  BCF    03.7
+....................  
+.................... { 
+....................      SisInit(); 
+00E8:  BCF    03.5
+00E9:  GOTO   004
+....................  
+....................      while (1) 
+....................  
+....................           { 
+....................  
+....................                set_adc_channel (0);                             //Selecciona el canal 0 para la conversión 
+00EA:  MOVLW  00
+00EB:  MOVWF  78
+00EC:  MOVF   1F,W
+00ED:  ANDLW  C7
+00EE:  IORWF  78,W
+00EF:  MOVWF  1F
+....................  
+....................                VALOR_ADC = read_adc ()*1.53;                    //Lee el valor del ADC y lo guarda en la variable 
+00F0:  BSF    1F.2
+00F1:  BTFSC  1F.2
+00F2:  GOTO   0F1
+00F3:  CLRF   24
+00F4:  MOVF   1E,W
+00F5:  MOVWF  23
+00F6:  GOTO   024
+00F7:  MOVF   7A,W
+00F8:  MOVWF  26
+00F9:  MOVF   79,W
+00FA:  MOVWF  25
+00FB:  MOVF   78,W
+00FC:  MOVWF  24
+00FD:  MOVF   77,W
+00FE:  MOVWF  23
+00FF:  MOVLW  0A
+0100:  MOVWF  2A
+0101:  MOVLW  D7
+0102:  MOVWF  29
+0103:  MOVLW  43
+0104:  MOVWF  28
+0105:  MOVLW  7F
+0106:  MOVWF  27
+0107:  GOTO   043
+0108:  MOVF   7A,W
+0109:  MOVWF  25
+010A:  MOVF   79,W
+010B:  MOVWF  24
+010C:  MOVF   78,W
+010D:  MOVWF  23
+010E:  MOVF   77,W
+010F:  MOVWF  22
+0110:  GOTO   0BA
+0111:  MOVF   78,W
+0112:  MOVWF  20
+....................  
+....................                set_pwm1_duty (VALOR_ADC);                        
+0113:  MOVF   20,W
+0114:  MOVWF  15
+0115:  GOTO   0EA
+....................  
+....................           } 
+....................  
+.................... } 
+0116:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F72   HS NOWDT PUT BROWNOUT NOLVP NOCPD NOWRT NODEBUG NOPROTECT
