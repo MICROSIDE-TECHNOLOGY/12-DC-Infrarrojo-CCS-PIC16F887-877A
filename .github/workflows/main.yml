@@ -1,0 +1,31 @@
+on: [push]
+
+jobs:
+  gist-sync:
+    name: gist-sync
+    runs-on: ubuntu-latest
+    steps:
+    #PIC16F877A
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: vhperaltaj/gist-sync-action@v1.0.0
+        id: PIC16F877A
+        with:
+          auth: ${{ secrets.GIST_TOKEN }}
+          gist_url: https://gist.github.com/microside-mx/7872d6c1840cb4d465f51b8576b0d9dc
+          gist_title: Práctica 12 - Motor DC + Infrarrojo PIC16F877A CCS.c
+          gist_description: Prácticas PIC CCS
+          github_file: Proyecto/PIC16F877A/Motor DC + Infrarrojo.c
+          file_encoding: WINDOWS-1252
+    #PIC16F887
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: vhperaltaj/gist-sync-action@v1.0.0
+        id: PIC16F887
+        with:
+          auth: ${{ secrets.GIST_TOKEN }}
+          gist_url: https://gist.github.com/microside-mx/5f571cf408c332abdfdab38445fd1852
+          gist_title: Práctica 12 - Motor DC + Infrarrojo PIC16F887 CCS.c
+          gist_description: Prácticas PIC CCS
+          github_file: Proyecto/PIC16F887/Motor DC + Infrarrojo.c
+          file_encoding: WINDOWS-1252
