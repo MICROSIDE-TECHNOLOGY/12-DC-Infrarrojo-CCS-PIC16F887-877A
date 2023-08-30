@@ -1,7 +1,7 @@
 ÀÄMotor DC + Infrarrojo
-   ÀÄMAIN  0/60  Ram=1
+   ÀÄmain  0/88  Ram=1
       ÃÄ@cinit1  (Inline)  Ram=0
-      ÃÄSisInit  0/32  Ram=0
+      ÃÄ@cinit2  (Inline)  Ram=0
       ÃÄ@ITOF  0/31  Ram=2
       ÃÄ@MULFF  0/119  Ram=13
       ÀÄ@SFTOI  0/33  Ram=4

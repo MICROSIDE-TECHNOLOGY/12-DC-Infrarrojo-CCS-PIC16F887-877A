@@ -1,5 +1,5 @@
-Compiling E:\Martin Hdez\Desktop\CCS 16F\877A\Práctica 12\Motor DC + Infrarrojo on 24-feb.-22 at 15:02
->>> Warning 203 "Motor DC + Infrarrojo.c" Line 39(1,1): Condition always TRUE
+Compiling C:\Users\victo\OneDrive\Documentos\X-TRAINER-hands-on\CCS\PIC16F\12-DC-Infrarrojo-CCS-PIC16F887-877A\Proyecto\PIC16F877A\Motor DC + Infrarrojo on 30-ago.-23 at 09:34
+>>> Warning 203 "C:\Users\victo\OneDrive\Documentos\X-TRAINER-hands-on\CCS\PIC16F\12-DC-Infrarrojo-CCS-PIC16F887-877A\Proyecto\PIC16F877A\Motor DC + Infrarrojo.c" Line 30(1,1): Condition always TRUE
       Memory usage:   ROM=3%      RAM=2% - 6%
       0 Errors,  1 Warnings.
 Build Successful.

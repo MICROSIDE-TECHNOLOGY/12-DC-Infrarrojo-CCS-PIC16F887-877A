@@ -1,7 +1,7 @@
 [PROJECT]
 Target=Motor DC + Infrarrojo.hex
 Processor_Text=PIC16F877A
-CCSVersion=5.076
+CCSVersion=5.115d
 Compiler=PCM
 [Target Data]
 FileList=Motor DC + Infrarrojo.c
@@ -9,15 +9,27 @@ FileList=Motor DC + Infrarrojo.c
 Type=4
 [mru-list]
 1=Motor DC + Infrarrojo.c
-[Units]
-Count=1
-1=Motor DC + Infrarrojo (main)
 
 [defines]
-buildcount=1
+buildcount=2
 
 [ProjectLog]
-Days=1
+Days=2
 D1=24-02-2022
 D1_L=1
 D1_L1=[54328]Project Closed.
+D2=30-08-2023
+D2_L=2
+D2_L1=[34475]Project Opened.
+D2_L2=[34787]Project Closed.
+
+[fileformats]
+forcecoff=0
+
+[Opened Files]
+1=Motor DC + Infrarrojo.c
+t1=1
+Count=1
+[Units]
+Count=1
+1=Motor DC + Infrarrojo (main)
